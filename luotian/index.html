@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>洛天依h-洛天依粉丝互动与资源分享主页</title>
+    <meta name="description" content="洛天依h专题页，汇聚洛天依最新动态、经典歌曲推荐、粉丝创作交流与互动资源，带你了解虚拟歌手洛天依的魅力世界。">
+    <meta name="keywords" content="洛天依h,洛天依,虚拟歌手,VOCALOID,洛天依歌曲,洛天依粉丝">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: #f5f0f8;
+            color: #2d2a3a;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* 页眉 */
+        .site-header {
+            background: linear-gradient(135deg, #6a3de8, #a06cd5);
+            padding: 18px 0;
+            box-shadow: 0 4px 15px rgba(106, 61, 232, 0.25);
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            color: #6a3de8;
+            font-size: 20px;
+        }
+        .logo-text {
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 24px;
+        }
+        .main-nav a {
+            color: #f0eaff;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 6px 4px;
+            border-bottom: 2px solid transparent;
+            transition: 0.2s;
+        }
+        .main-nav a:hover {
+            border-bottom-color: #fff;
+            color: #fff;
+        }
+        /* 主视觉 */
+        .hero {
+            background: linear-gradient(120deg, #2b1a4a 0%, #4b2a7a 45%, #7d4f9f 100%);
+            color: #fff;
+            padding: 70px 20px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: -60px;
+            right: -60px;
+            width: 260px;
+            height: 260px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 16px;
+            letter-spacing: 2px;
+            font-weight: 800;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 720px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        .hero-btn {
+            display: inline-block;
+            background: #ffd166;
+            color: #2b1a4a;
+            padding: 12px 32px;
+            border-radius: 40px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .hero-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+        }
+        /* 信息卡片区 */
+        .intro-section {
+            padding: 50px 0;
+        }
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #4b2a7a;
+            position: relative;
+        }
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #a06cd5;
+            margin: 10px auto 0;
+            border-radius: 4px;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            margin-top: 20px;
+        }
+        .feature-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 28px 22px;
+            box-shadow: 0 6px 18px rgba(75, 42, 122, 0.08);
+            transition: 0.25s;
+            border-top: 4px solid #a06cd5;
+        }
+        .feature-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 28px rgba(75, 42, 122, 0.15);
+        }
+        .feature-card h3 {
+            color: #4b2a7a;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        .feature-card p {
+            color: #555;
+            font-size: 0.95rem;
+        }
+        /* 热门歌曲模块 */
+        .music-section {
+            background: #e9def5;
+            padding: 50px 0;
+        }
+        .song-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .song-item {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px 18px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+            transition: 0.2s;
+        }
+        .song-item:hover {
+            box-shadow: 0 8px 20px rgba(106, 61, 232, 0.12);
+        }
+        .song-num {
+            background: #6a3de8;
+            color: #fff;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .song-info h4 {
+            font-size: 1.1rem;
+            color: #2d2a3a;
+        }
+        .song-info span {
+            font-size: 0.85rem;
+            color: #777;
+        }
+        /* 互动讨论 */
+        .community-section {
+            padding: 50px 0;
+        }
+        .topic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .topic-item {
+            background: #fff;
+            border-radius: 14px;
+            padding: 22px;
+            border-left: 5px solid #a06cd5;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        .topic-item h4 {
+            color: #3b2a5a;
+            margin-bottom: 8px;
+        }
+        .topic-meta {
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 12px;
+        }
+        /* FAQ */
+        .faq-section {
+            background: #f0e8f7;
+            padding: 50px 0;
+        }
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+        .faq-item {
+            background: #fff;
+            border-radius: 12px;
+            padding: 18px 22px;
+            margin-bottom: 14px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+        .faq-item h4 {
+            color: #4b2a7a;
+            font-size: 1.1rem;
+            margin-bottom: 6px;
+        }
+        .faq-item p {
+            color: #555;
+            font-size: 0.95rem;
+        }
+        /* 页脚 */
+        .site-footer {
+            background: #241a36;
+            color: #c9b8e0;
+            padding: 40px 0 30px;
+            text-align: center;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+        }
+        .footer-links a {
+            color: #d0c0e8;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+        .footer-links a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+        .footer-copy {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            border-top: 1px solid #3f2d5c;
+            padding-top: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+            }
+            .main-nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 14px;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .section-title {
+                font-size: 1.6rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .song-list {
+                grid-template-columns: 1fr;
+            }
+            .topic-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo-area">
+                <div class="logo-icon">洛</div>
+                <div class="logo-text">洛天依h · 粉丝同好会</div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#intro">首页</a></li>
+                    <li><a href="#music">热门歌曲</a></li>
+                    <li><a href="#community">粉丝互动</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 首屏 Hero -->
+        <section class="hero">
+            <div class="container">
+                <h1>洛天依h · 虚拟歌姬的奇妙世界</h1>
+                <p>欢迎来到洛天依h主题站！这里聚集了喜爱洛天依的朋友，分享音乐、同人创作、演出资讯与日常话题。无论你是新粉还是老粉，都能找到属于自己的快乐。</p>
+                <a href="#music" class="hero-btn">🎵 探索热门歌曲</a>
+            </div>
+        </section>
+
+        <!-- 简介与核心板块 -->
+        <section class="intro-section" id="intro">
+            <div class="container">
+                <h2 class="section-title">认识洛天依h</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>🎤 虚拟歌手</h3>
+                        <p>洛天依是以VOCALOID语音合成引擎为基础开发的虚拟歌姬，拥有清澈甜美的声线，能够演唱多种风格的歌曲。她的设定形象深受粉丝喜爱。</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🎶 海量曲库</h3>
+                        <p>从古风、流行到电子、民谣，洛天依的作品跨越众多音乐类型。每周都有新的原创歌曲或翻唱发布，音乐世界极其丰富。</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🖌️ 同人创作</h3>
+                        <p>粉丝们为洛天依绘制插画、制作动画、撰写故事，形成了活跃的创作生态。在这里你可以找到各种优质同人作品。</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>📅 活动资讯</h3>
+                        <p>洛天依会参与线上演唱会、虚拟偶像企划及品牌联动。本站及时整理相关活动时间与参与方式，不再错过精彩内容。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 热门歌曲推荐 -->
+        <section class="music-section" id="music">
+            <div class="container">
+                <h2 class="section-title">🎧 近期热门歌曲</h2>
+                <div class="song-list">
+                    <div class="song-item">
+                        <div class="song-num">1</div>
+                        <div class="song-info">
+                            <h4>《权御天下》</h4>
+                            <span>经典燃曲 · 百万播放</span>
+                        </div>
+                    </div>
+                    <div class="song-item">
+                        <div class="song-num">2</div>
+                        <div class="song-info">
+                            <h4>《普通DISCO》</h4>
+                            <span>洗脑节奏 · 互动极高</span>
+                        </div>
+                    </div>
+                    <div class="song-item">
+                        <div class="song-num">3</div>
+                        <div class="song-info">
+                            <h4>《达拉崩吧》</h4>
+                            <span>叙事神曲 · 翻唱无数</span>
+                        </div>
+                    </div>
+                    <div class="song-item">
+                        <div class="song-num">4</div>
+                        <div class="song-info">
+                            <h4>《勾指起誓》</h4>
+                            <span>温暖治愈 · 粉丝最爱</span>
+                        </div>
+                    </div>
+                    <div class="song-item">
+                        <div class="song-num">5</div>
+                        <div class="song-info">
+                            <h4>《万古生香》</h4>
+                            <span>国风力作 · 古风圈热推</span>
+                        </div>
+                    </div>
+                    <div class="song-item">
+                        <div class="song-num">6</div>
+                        <div class="song-info">
+                            <h4>《一半一半》</h4>
+                            <span>清新俏皮 · 日常循环</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 粉丝互动社区 -->
+        <section class="community-section" id="community">
+            <div class="container">
+                <h2 class="section-title">💬 粉丝互动热门话题</h2>
+                <div class="topic-grid">
+                    <div class="topic-item">
+                        <h4>【讨论】你最喜欢洛天依哪一首古风曲？</h4>
+                        <p>大家来聊聊自己心中的古风top1，顺便安利一些冷门宝藏歌曲吧！</p>
+                        <div class="topic-meta">🔥 102条讨论 · 300+点赞</div>
+                    </div>
+                    <div class="topic-item">
+                        <h4>【创作】天依同人插画接龙活动</h4>
+                        <p>每周一个主题，用画笔描绘你心中的天依，优秀作品将展示在主页。</p>
+                        <div class="topic-meta">🎨 45幅作品 · 活动进行中</div>
+                    </div>
+                    <div class="topic-item">
+                        <h4>【求助】第一次看虚拟演唱会需要准备什么？</h4>
+                        <p>在线等！有没有去过的朋友分享一下设备、应援和观看体验方面的建议？</p>
+                        <div class="topic-meta">🙋 38条回复 · 热心解答</div>
+                    </div>
+                    <div class="topic-item">
+                        <h4>【翻唱】挑战用洛天依音源翻唱流行歌</h4>
+                        <p>分享你的调教作品，交流VOCALOID调音技巧，共同进步。</p>
+                        <div class="topic-meta">🎤 21个作品 · 持续更新</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 常见问题 FAQ -->
+        <section class="faq-section" id="faq">
+            <div class="container">
+                <h2 class="section-title">❓ 关于洛天依h的常见问题</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <h4>洛天依h和洛天依是什么关系？</h4>
+                        <p>“h”通常代表“粉丝主页”或“同好”的缩写，本站是以洛天依为主题的粉丝交流与资源分享站点，并非官方账号。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>如何获取洛天依的最新歌曲？</h4>
+                        <p>你可以关注音乐平台的官方歌手页，或在本站的“热门歌曲”板块查看近期推荐。我们也会整理新歌速递信息。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>洛天依是真人吗？</h4>
+                        <p>不是。洛天依是使用电子音乐合成技术创造的虚拟歌手形象，其声音由音源库合成，但角色设定、人设与故事由运营方和粉丝共同丰富。</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4>想参与同人创作，需要哪些工具？</h4>
+                        <p>绘画可使用主流绘图软件，音乐创作可尝试VOCALOID编辑器或各类声库。社区内有经验帖供新手参考，欢迎交流。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">关于我们</a>
+                <a href="#">版权声明</a>
+                <a href="#">联系方式</a>
+                <a href="#">友情链接</a>
+            </div>
+            <p class="footer-copy">本站为粉丝自发建设的非官方网站，致力于传播洛天依的音乐与文化。所有内容仅供参考，不用于商业用途。如有版权问题请联系我们。</p>
+            <p style="margin-top: 12px; font-size: 0.85rem;">© 洛天依h 粉丝同好会 · 用爱发电</p>
+        </div>
+    </footer>
+</body>
+</html>
