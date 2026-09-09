@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>女同漫画-女同漫画精选推荐与阅读指南</title>
+    <meta name="description" content="女同漫画精选推荐与阅读指南，涵盖百合漫画、GL漫画作品推荐，介绍不同风格与题材，帮助读者找到心仪的女同漫画作品。">
+    <meta name="keywords" content="女同漫画,百合漫画,GL漫画,女同漫画推荐,百合漫画推荐,GL漫画推荐,女同漫画阅读">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background-color: #faf7f8;
+            color: #333;
+            line-height: 1.7;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 页眉 */
+        .site-header {
+            background: linear-gradient(135deg, #3d2b4f 0%, #6b4c7a 50%, #9b6a88 100%);
+            color: #fff;
+            padding: 20px 0;
+            box-shadow: 0 4px 15px rgba(61, 43, 79, 0.3);
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+        }
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .logo-text span {
+            color: #f0c7e0;
+        }
+        .header-nav ul {
+            list-style: none;
+            display: flex;
+            gap: 28px;
+        }
+        .header-nav ul li a {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 16px;
+            padding: 6px 0;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s;
+        }
+        .header-nav ul li a:hover {
+            color: #fff;
+            border-bottom-color: #f0c7e0;
+        }
+
+        /* 首屏 */
+        .hero {
+            background: linear-gradient(180deg, #faf7f8 0%, #f1e9ee 100%);
+            padding: 60px 0 50px;
+            text-align: center;
+            border-bottom: 1px solid #e5d9e0;
+        }
+        .hero h1 {
+            font-size: 42px;
+            color: #3d2b4f;
+            margin-bottom: 16px;
+            letter-spacing: 2px;
+            font-weight: 800;
+        }
+        .hero p {
+            font-size: 18px;
+            color: #5a4a5c;
+            max-width: 800px;
+            margin: 0 auto 20px;
+        }
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .hero-tags span {
+            background: #fff;
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 14px;
+            color: #6b4c7a;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e0d0dd;
+        }
+
+        /* 核心内容区 */
+        .main-content {
+            padding: 50px 0;
+        }
+        .section-title {
+            font-size: 30px;
+            color: #3d2b4f;
+            margin-bottom: 12px;
+            position: relative;
+            padding-bottom: 12px;
+            font-weight: 700;
+            text-align: center;
+        }
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #9b6a88, #d4a0c0);
+            margin: 10px auto 0;
+            border-radius: 3px;
+        }
+        .section-desc {
+            text-align: center;
+            color: #6b5e6b;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* 卡片网格 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 28px 22px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid #9b6a88;
+        }
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+        }
+        .card-icon {
+            font-size: 36px;
+            margin-bottom: 14px;
+        }
+        .card h3 {
+            font-size: 20px;
+            color: #3d2b4f;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .card p {
+            color: #5a4a5c;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        /* 推荐列表 */
+        .recommend-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .recommend-item {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .recommend-item:hover {
+            transform: translateY(-4px);
+        }
+        .recommend-cover {
+            background: linear-gradient(135deg, #e8d5e0, #f0e0e8);
+            padding: 20px;
+            text-align: center;
+            font-size: 56px;
+            min-height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .recommend-info {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .recommend-info h3 {
+            color: #3d2b4f;
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+        .recommend-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 10px;
+        }
+        .recommend-tags span {
+            background: #f1e9ee;
+            color: #6b4c7a;
+            font-size: 12px;
+            padding: 2px 12px;
+            border-radius: 20px;
+        }
+        .recommend-info p {
+            font-size: 14px;
+            color: #5a4a5c;
+            flex: 1;
+        }
+
+        /* 详细说明区 */
+        .detail-section {
+            background: #fff;
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+        }
+        .detail-section h2 {
+            color: #3d2b4f;
+            font-size: 24px;
+            margin-bottom: 20px;
+            padding-left: 16px;
+            border-left: 4px solid #9b6a88;
+        }
+        .detail-section h3 {
+            color: #4a3a52;
+            font-size: 18px;
+            margin: 20px 0 10px;
+        }
+        .detail-section p {
+            margin-bottom: 12px;
+            color: #4a3a52;
+        }
+        .detail-section ul {
+            margin: 10px 0 20px 20px;
+        }
+        .detail-section li {
+            margin-bottom: 8px;
+        }
+
+        /* 步骤 */
+        .steps-list {
+            counter-reset: step-counter;
+            list-style: none;
+            margin: 20px 0;
+        }
+        .steps-list li {
+            counter-increment: step-counter;
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: #4a3a52;
+        }
+        .steps-list li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 34px;
+            height: 34px;
+            background: linear-gradient(135deg, #9b6a88, #6b4c7a);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 15px;
+        }
+
+        /* 注意事项 */
+        .notice-box {
+            background: #f8f0f5;
+            border-radius: 12px;
+            padding: 24px;
+            border-left: 4px solid #9b6a88;
+            margin: 20px 0;
+        }
+        .notice-box strong {
+            color: #3d2b4f;
+        }
+
+        /* FAQ */
+        .faq-section {
+            padding: 40px 0;
+        }
+        .faq-item {
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+            border-left: 4px solid #d4a0c0;
+        }
+        .faq-item h3 {
+            color: #3d2b4f;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .faq-item p {
+            color: #5a4a5c;
+            font-size: 15px;
+        }
+
+        /* 页脚 */
+        .site-footer {
+            background: #2d2038;
+            color: rgba(255, 255, 255, 0.8);
+            padding: 40px 0 20px;
+            margin-top: 40px;
+        }
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .footer-col h4 {
+            color: #f0c7e0;
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+        .footer-col ul {
+            list-style: none;
+        }
+        .footer-col ul li {
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+        .footer-copyright {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .header-nav ul {
+                gap: 18px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero h1 {
+                font-size: 30px;
+            }
+            .hero p {
+                font-size: 16px;
+            }
+            .section-title {
+                font-size: 24px;
+            }
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            .recommend-list {
+                grid-template-columns: 1fr;
+            }
+            .detail-section {
+                padding: 24px;
+            }
+            .footer-inner {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+        }
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 14px;
+            }
+            .hero {
+                padding: 40px 0 30px;
+            }
+            .logo-text {
+                font-size: 20px;
+            }
+        }
+    </style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo-area">
+                <div class="logo-icon">❤</div>
+                <div class="logo-text">百合漫画<span>精选</span></div>
+            </div>
+            <nav class="header-nav">
+                <ul>
+                    <li><a href="#home">首页</a></li>
+                    <li><a href="#recommend">作品推荐</a></li>
+                    <li><a href="#guide">阅读指南</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- 首屏 -->
+        <section class="hero" id="home">
+            <div class="container">
+                <h1>女同漫画</h1>
+                <p>探索细腻情感与多元故事，这里是女同漫画（百合漫画、GL漫画）的精选推荐与阅读指南。无论你是初次接触还是资深爱好者，都能在这里找到打动心灵的作品。</p>
+                <div class="hero-tags">
+                    <span>百合漫画</span>
+                    <span>GL漫画</span>
+                    <span>校园恋爱</span>
+                    <span>职场百合</span>
+                    <span>治愈系</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 核心内容区 -->
+        <section class="main-content container">
+            <h2 class="section-title">女同漫画的多样魅力</h2>
+            <p class="section-desc">女同漫画以女性之间的情感为主线，涵盖从青春懵懂到成熟相守的各类故事，题材丰富、风格多元，为读者展现了真实而动人的情感世界。</p>
+            
+            <div class="card-grid">
+                <article class="card">
+                    <div class="card-icon">🌷</div>
+                    <h3>青春校园类</h3>
+                    <p>描绘少女时代青涩的悸动与纯真的爱恋。这类作品画风清新，情感细腻，非常适合喜欢慢节奏、治愈系故事的读者。</p>
+                </article>
+                <article class="card">
+                    <div class="card-icon">💼</div>
+                    <h3>职场成人类</h3>
+                    <p>聚焦成年女性在职场与生活中的感情。故事更贴近现实，探讨自我认同、社会压力与亲密关系的平衡，人物塑造立体。</p>
+                </article>
+                <article class="card">
+                    <div class="card-icon">⏳</div>
+                    <h3>古风奇幻类</h3>
+                    <p>以古代或架空世界为背景，融入奇幻、江湖、宫廷等元素。在宏大的设定中展开女性角色之间的深刻羁绊与浪漫冒险。</p>
+                </article>
+                <article class="card">
+                    <div class="card-icon">🌈</div>
+                    <h3>日常治愈类</h3>
+                    <p>没有强烈的戏剧冲突，专注于日常生活的温馨点滴。两人一起做饭、散步、看剧的平凡瞬间，却有着最治愈人心的力量。</p>
+                </article>
+                <article class="card">
+                    <div class="card-icon">💔</div>
+                    <h3>现实议题类</h3>
+                    <p>深入探讨性向认同、家庭期望、社会偏见等现实议题。这类作品往往带有深刻的社会观察，引发读者的思考与共鸣。</p>
+                </article>
+                <article class="card">
+                    <div class="card-icon">✨</div>
+                    <h3>轻松搞笑类</h3>
+                    <p>以轻松幽默的笔触描绘互动日常，误会与告白齐飞，搞笑与甜蜜并存。适合想放松心情、开怀一笑的读者。</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 作品推荐 -->
+        <section class="container" id="recommend">
+            <h2 class="section-title">精选女同漫画推荐</h2>
+            <p class="section-desc">以下按风格分类整理了一些广受好评的女同漫画作品方向，供不同口味的读者参考。</p>
+            <div class="recommend-list">
+                <article class="recommend-item">
+                    <div class="recommend-cover">🌸</div>
+                    <div class="recommend-info">
+                        <h3>校园纯恋系</h3>
+                        <div class="recommend-tags">
+                            <span>青春</span><span>慢热</span><span>细腻</span>
+                        </div>
+                        <p>讲述同班同学从朋友到恋人的过程，大量细腻的心理描写和日常互动，将少女心事刻画得真实动人。适合喜欢温柔叙事的读者。</p>
+                    </div>
+                </article>
+                <article class="recommend-item">
+                    <div class="recommend-cover">🌃</div>
+                    <div class="recommend-info">
+                        <h3>都市夜行系</h3>
+                        <div class="recommend-tags">
+                            <span>成年</span><span>现实</span><span>成熟</span>
+                        </div>
+                        <p>围绕都市女性的职场与生活展开，在复杂的社会关系中摸索感情的方向。人物独立而成熟，故事更具现实厚度。</p>
+                    </div>
+                </article>
+                <article class="recommend-item">
+                    <div class="recommend-cover">⚔</div>
+                    <div class="recommend-info">
+                        <h3>古风江湖系</h3>
+                        <div class="recommend-tags">
+                            <span>古风</span><span>侠义</span><span>唯美</span>
+                        </div>
+                        <p>在刀光剑影的江湖中，两位女性角色因命运交织而结缘。画风典雅，情感与剧情并重，别有一番韵味。</p>
+                    </div>
+                </article>
+                <article class="recommend-item">
+                    <div class="recommend-cover">☕</div>
+                    <div class="recommend-info">
+                        <h3>日常治愈系</h3>
+                        <div class="recommend-tags">
+                            <span>温馨</span><span>平淡</span><span>治愈</span>
+                        </div>
+                        <p>没有大风大浪，只有两个人相互陪伴的日常。一起度过春夏秋冬，在细水长流中体会爱的本质。</p>
+                    </div>
+                </article>
+                <article class="recommend-item">
+                    <div class="recommend-cover">🎭</div>
+                    <div class="recommend-info">
+                        <h3>社会写实系</h3>
+                        <div class="recommend-tags">
+                            <span>深度</span><span>思考</span><span>成长</span>
+                        </div>
+                        <p>直面自我认同与社会期待的冲突，描绘角色在挣扎中寻找自我的旅程。情节沉重但充满力量，令人印象深刻。</p>
+                    </div>
+                </article>
+                <article class="recommend-item">
+                    <div class="recommend-cover">😂</div>
+                    <div class="recommend-info">
+                        <h3>轻喜剧系</h3>
+                        <div class="recommend-tags">
+                            <span>搞笑</span><span>甜宠</span><span>轻松</span>
+                        </div>
+                        <p>误会不断、笑料百出，互动中充满甜蜜火花。阅读体验极为轻松，是放松心情的绝佳选择。</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 阅读指南 -->
+        <section class="container" id="guide">
+            <div class="detail-section">
+                <h2>女同漫画阅读指南</h2>
+                <p>女同漫画是一个广泛的概念，了解一些基本分类与阅读渠道，能帮助你更快找到心仪的作品。</p>
+                
+                <h3>常见分类名词</h3>
+                <ul>
+                    <li><strong>百合漫画：</strong>广义指女性之间亲密关系的漫画，涵盖情感与日常，有的偏重精神层面的羁绊。</li>
+                    <li><strong>GL漫画：</strong>一般指明确描写女性之间恋爱关系的作品，情感指向更直接。</li>
+                    <li><strong>轻百合作品：</strong>以女性互动为主，但未必有明确恋爱关系，更侧重友情或伙伴情谊。</li>
+                </ul>
+
+                <h3>如何挑选适合自己的作品</h3>
+                <ol class="steps-list">
+                    <li>先确定自己喜欢的题材方向：校园、职场、古风、日常还是奇幻。</li>
+                    <li>关注画风偏好：清新淡雅、华丽精细还是简约线条，画风直接影响阅读体验。</li>
+                    <li>留意故事节奏：有人喜欢慢热细腻，有人偏爱快节奏的直球恋爱。</li>
+                    <li>参考他人推荐与评价，但最终以自己的感受为准。</li>
+                    <li>从短篇入手，快速了解不同作者的风格，再深入追长篇。</li>
+                </ol>
+
+                <h3>阅读平台与方式</h3>
+                <p>目前国内许多正规漫画平台都设有百合或GL分类专区，可以通过关键词直接搜索。此外，部分独立创作者会通过个人主页或创作平台发布作品。建议支持正版，这不仅是对创作者劳动的尊重，也能促进更多优秀作品的诞生。</p>
+
+                <div class="notice-box">
+                    <strong>小提示：</strong>女同漫画的核心在于真挚的情感表达与故事本身，无论题材如何，优秀的作品总能让人产生共鸣。阅读时请保持开放的心态，尊重多元的表达方式。
+                </div>
+            </div>
+        </section>
+
+        <!-- 注意事项 -->
+        <section class="container">
+            <div class="detail-section">
+                <h2>阅读与选择建议</h2>
+                <h3>关于作品尺度</h3>
+                <p>女同漫画中，不同作品的内容尺度差异较大。有的偏向清新纯爱，有的包含较为直白的描写。请根据个人接受度选择合适的作品，同时在公共场合注意阅读环境。</p>
+                <h3>关于创作背景</h3>
+                <p>女同漫画的创作者群体多元，有些是出于个人经历的表达，有些是基于想象与创作。理解作品背景有助于更好地把握故事脉络，但不必过度解读。</p>
+                <h3>关于作品推荐</h3>
+                <p>每个人的喜好不同，广受好评的作品也未必适合所有人。建议多尝试不同类型的作品，逐渐发现属于自己的阅读偏好。</p>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq-section container" id="faq">
+            <h2 class="section-title">常见问题解答</h2>
+            <div class="faq-item">
+                <h3>女同漫画和百合漫画有什么区别？</h3>
+                <p>两者概念高度重叠。通常"百合漫画"范围更广，可以包含女性间深厚友谊或暧昧关系；而"GL漫画"更明确指向女性之间的恋爱关系。但在日常使用中，很多读者会将二者混用。</p>
+            </div>
+            <div class="faq-item">
+                <h3>有哪些适合新手入门的女同漫画？</h3>
+                <p>可以从画风清新、节奏舒缓的校园日常类作品开始，这类作品情感细腻、接受度高。也可以选择轻松搞笑的轻喜剧，阅读门槛低，容易产生好感。</p>
+            </div>
+            <div class="faq-item">
+                <h3>在哪里可以找到正版的女同漫画？</h3>
+                <p>国内主流漫画平台大多设有百合或相关分类专区，可以方便地在线阅读。同时，一些出版机构也会引进优秀的海外作品。建议优先选择正版渠道。</p>
+            </div>
+            <div class="faq-item">
+                <h3>女同漫画只适合特定人群阅读吗？</h3>
+                <p>当然不是。优秀的作品讲述的是人类共通的情感——爱、成长、理解与陪伴。无论性别或性向，都可以从好故事中获得感动与启发。</p>
+            </div>
+            <div class="faq-item">
+                <h3>如何判断一部女同漫画是否好看？</h3>
+                <p>好看与否是非常主观的判断。可以从画风、剧情、人物塑造、情感描写等维度考量。建议先看前几话，感受是否对味，不必盲从他人评价。</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li>专注于女同漫画推荐与分享</li>
+                        <li>为读者提供多元的阅读视角</li>
+                        <li>尊重每一份真挚的情感表达</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>内容分类</h4>
+                    <ul>
+                        <li>校园青春</li>
+                        <li>职场成人</li>
+                        <li>古风奇幻</li>
+                        <li>日常治愈</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>阅读提示</h4>
+                    <ul>
+                        <li>支持正版漫画</li>
+                        <li>合理选择内容</li>
+                        <li>尊重多元文化</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>© 2024 女同漫画精选推荐与阅读指南 · 用故事连接每一颗心</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
